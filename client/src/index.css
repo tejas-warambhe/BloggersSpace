@@ -7,12 +7,46 @@ body {
     display: flex;
     font-weight: 400;
     font-family: sans-serif;
-    background: #12c2e9;
+    background: white;
+    background-image: url("../public/output-onlinepngtools\(4\).png");
+    /* background: #12c2e9; */
     /* fallback for old browsers */
-    background: -webkit-linear-gradient(to right, #f64f59, #c471ed, #12c2e9);
+    /* background: -webkit-linear-gradient(to right, #f64f59, #c471ed, #12c2e9); */
     /* Chrome 10-25, Safari 5.1-6 */
-    background: linear-gradient(to right, #f64f59, #c471ed, #12c2e9);
+    /* background: linear-gradient(to right, #f64f59, #c471ed, #12c2e9); */
     /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+#navbar {
+    color: white !important;
+    text-decoration: white !important;
+    background-color: #131313e8 !important;
+}
+
+#footer1 {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+    color: white !important;
+    text-decoration: white !important;
+    background-color: #131313e8 !important;
+}
+
+#footer2 {
+    position: relative;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+    color: white !important;
+    text-decoration: white !important;
+    background-color: #131313e8 !important;
+}
+
+img {
+    opacity: 0.5;
 }
 
 body,

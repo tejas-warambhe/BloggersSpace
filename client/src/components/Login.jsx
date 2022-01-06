@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
+import Footer from "./Footer";
 
 export default function Login(props) {
   const [inputs, setInputs] = useState({
@@ -28,6 +29,7 @@ export default function Login(props) {
       console.log(ParseRes);
       localStorage.setItem("token", ParseRes.token);
       props.setAuth(true);
+      props.showAlert("Logged In Succesfully", "success");
     } catch (err) {
       console.log(err.message);
     }
@@ -107,6 +109,7 @@ export default function Login(props) {
       >
         Submit
       </button> */}
+      <Footer foot = {1}/>
     </div>
   );
 }

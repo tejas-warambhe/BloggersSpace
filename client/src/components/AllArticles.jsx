@@ -26,13 +26,19 @@ export default function AllArticles() {
     <div>
       {articles.map((ele, key) => {
         return (
-          <div className="container py-2" key={key}>
-            <div className="card">
+          <div className="container py-3 shadow " key={key}>
+            <div className="card p-2">
               <div className="row ">
-                <div className="col-md-12 px-3">
+                <div className="col-md-12 px-3" >
                   <div className="card-block px-6">
                     <h4 className="card-title">{ele.article_title}</h4>
-                    <blockquote>{ele.user_name}</blockquote>
+                    <div className="card-title">
+                    <figcaption class="blockquote-footer">
+                    {ele.user_name}
+                            </figcaption>
+                    </div>
+                    
+                    {/* <blockquote>{ele.user_name}</blockquote> */}
                     <p className="card-text">{ele.article_content}</p>
                   </div>
                 </div>

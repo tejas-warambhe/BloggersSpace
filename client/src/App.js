@@ -6,6 +6,8 @@ import Register from './components/Register';
 import Dashboard from './components/Home';
 import Navbar from './components/Navbar';
 import MyArticles from './components/MyArticles';
+import Alert from './components/Alert';
+
 
 
 function App() {
@@ -35,17 +37,30 @@ function App() {
   useEffect(() =>{
     verifyAuth()
   }, []);
+  const [alert, setAlert] = useState(null);
+  const showAlert = (message, type) => {
+  setAlert({
+    message: message,
+    type: type,
+  });
+  setTimeout(() => {
+    setAlert(null);
+  }, 1500);
+};
   return (
     <>
       <Router>
         <Navbar mode="dark"/>
+        
         <Routes>
-          <Route exact path="/" element={!isAuthenticated ? <Login setAuth={setAuth}/> : <Navigate to="/home"/>}/>
-          <Route exact path="/register" element={!isAuthenticated ? <Register setAuth={setAuth}/> : <Navigate to="/"/>}/>
-          <Route exact path="/home" element={isAuthenticated ? <Dashboard setAuth={setAuth}/> : <Navigate to="/"/>}/>
-          <Route exact path="/myarticles" element = {isAuthenticated ? <MyArticles /> : <Navigate to ="/"/>}/>
+          <Route exact path="/" element={!isAuthenticated ? <Login showAlert={showAlert} setAuth={setAuth}/> : <Navigate to="/home"/>}/>
+          <Route exact path="/register" element={!isAuthenticated ? <Register showAlert={showAlert} setAuth={setAuth}/> : <Navigate to="/"/>}/>
+          <Route exact path="/home" element={isAuthenticated ? <Dashboard showAlert={showAlert} setAuth={setAuth}/> : <Navigate to="/"/>}/>
+          <Route exact path="/myarticles" element = {isAuthenticated ? <MyArticles showAlert={showAlert} /> : <Navigate to ="/"/>}/>
         </Routes>
       </Router>
+      <Alert alert={alert} />
+
     </>
   );
 }

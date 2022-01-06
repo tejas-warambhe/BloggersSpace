@@ -19,13 +19,14 @@ export default function ArticleCard(props) {
     const parseRes = await response.json();
     props.updateApi();
     console.log(parseRes);
+    props.showAlert("Blog Deleted Succesfully", "danger");
   };
   const [input, setInput] = useState({
     title: props.title,
     content: props.content,
     id: props.unique_id
   });
-  const {id} = input;
+
   function print(e) {
     e.preventDefault();
     const article_id = e.target.name;
@@ -43,8 +44,8 @@ export default function ArticleCard(props) {
   const updatePost = async (e) => {
     e.preventDefault();
     const article_id = e.target.name;
-    const article_title = input.title;
-    const article_content = input.content;
+    const article_title = e.target.value;
+    const article_content = e.target.valuet;
     const body = {
       article_id,
       article_title,
@@ -70,33 +71,33 @@ export default function ArticleCard(props) {
     setInput({ ...input, [e.target.name]: e.target.value });
   };
   
-  console.log(props.id);
+  console.log(props.unique_id);
   return (
-    <div key={props.id}>
-      <div className="container py-2">
-        <div className="card">
+    <div key={props.unique_id}>
+      <div className="container p-2 shadow">
+        <div className="card p-2">
           <div className="row ">
             <div className="col-md-12 px-3">
               <div className="card-block px-6">
-                <h4 className="card-title">{props.title}</h4>
+                <h4 className="card-title"><b>{props.title}</b></h4>
                 <p className="card-text">{props.content}</p>
 
                 <br />
                 <a
-                  name={input.id}
+                  name={props.unique_id}
                   href="/myarticles"
-                  className="mt-auto btn btn-danger shadow"
+                  className="mt-auto m-2 btn btn-danger shadow"
                   onClick={(e) => deleteArticle(e)}
                 >
                   Delete
                 </a>
                 <button
-                  className="btn btn-warning  mx-2 shadow mt-auto"
+                  className="btn btn-warning   m-2 shadow mt-auto"
                   data-toggle="modal"
                   type="button"
-                  data-target={`#${input.id}`}
+                  data-target={`#${props.unique_id}`}
                   onClick={(e) => print(e)}
-                  name={input.id}
+                  name={props.unique_id}
                 >
                   Edit
                 </button>
@@ -104,7 +105,7 @@ export default function ArticleCard(props) {
               </div>
               <div
                   className="modal fade"
-                  id={`${input.id}`}
+                  id={`${props.unique_id}`}
                   tabIndex="-1"
                   role="dialog"
                   aria-labelledby="exampleModalLabel"
