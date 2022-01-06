@@ -43,9 +43,9 @@ export default function ArticleCard(props) {
 
   const updatePost = async (e) => {
     e.preventDefault();
-    const article_id = e.target.name;
-    const article_title = e.target.value;
-    const article_content = e.target.valuet;
+    const article_id = input.id;
+    const article_title = input.title;
+    const article_content = input.content;
     const body = {
       article_id,
       article_title,
@@ -71,18 +71,20 @@ export default function ArticleCard(props) {
     setInput({ ...input, [e.target.name]: e.target.value });
   };
   
-  console.log(props.unique_id);
+  
   return (
     <div key={props.unique_id}>
       <div className="container p-2 shadow">
-        <div className="card p-2">
+        <div className="card p-2" style={{color:"white", backgroundColor: "#2f2844db"}}>
           <div className="row ">
             <div className="col-md-12 px-3">
               <div className="card-block px-6">
-                <h4 className="card-title"><b>{props.title}</b></h4>
+                <h1 className="card-title" id= "cow"><u>{props.title}</u></h1>
+                <hr/>
                 <p className="card-text">{props.content}</p>
 
                 <br />
+                <hr/>
                 <a
                   name={props.unique_id}
                   href="/myarticles"
@@ -91,7 +93,7 @@ export default function ArticleCard(props) {
                 >
                   Delete
                 </a>
-                <button
+                <a
                   className="btn btn-warning   m-2 shadow mt-auto"
                   data-toggle="modal"
                   type="button"
@@ -100,7 +102,7 @@ export default function ArticleCard(props) {
                   name={props.unique_id}
                 >
                   Edit
-                </button>
+                </a>
                 
               </div>
               <div
@@ -117,9 +119,9 @@ export default function ArticleCard(props) {
                   >
                     <div className="modal-content">
                       <div className="modal-header border-bottom-0">
-                        <h3 className="modal-title" id="exampleModalLabel">
+                        <span className="modal-title" id="exampleModalLabel" style={{color : "black", fontSize:"35px"}}>
                           Update Your Blog!
-                        </h3>
+                        </span>
                         <button
                           type="button"
                           className="close"
@@ -132,20 +134,21 @@ export default function ArticleCard(props) {
                       <form>
                         <div className="modal-body">
                           <div className="form-group">
-                            <label htmlFor="email1">Blog Title</label>
+                            <label htmlFor="email1" style={{color: "black"}}>Blog Title</label>
                             <input
                               type="text"
                               name="title"
                               onChange={(e) => onChange(e)}
                               value={input.title}
-                              className="form-control"
+                              className="form-control my-2"
                               id=""
                               aria-describedby="emai"
                               placeholder="Enter Title"
+                              
                             />
                           </div>
                           <div className="form-group">
-                            <label htmlFor="email1">Blog Content</label>
+                            <label htmlFor="email1" style={{color: "black"}}>Blog Content</label>
                             <textarea
                               value={input.content}
                               onChange={(e) => onChange(e)}

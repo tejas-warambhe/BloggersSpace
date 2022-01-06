@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 export default function Navbar() {
   return (
     <div className="">
-      <nav id="navbar" className="navbar navbar-expand-lg navbar-dark">
+      <nav id="navbar" className="navbar navbar-expand-lg navbar-dark fixed-top">
         <a className="navbar-brand" href="/home">
           BloggerSpace
         </a>
@@ -26,9 +26,6 @@ export default function Navbar() {
             </Link>
             <Link className="nav-item nav-link" to="/myarticles">
               My Articles
-            </Link>
-            <Link className="nav-item nav-link disabled" to="/">
-              Disabled
             </Link>
           </div>
         </div>

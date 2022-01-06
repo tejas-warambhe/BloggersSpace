@@ -51,7 +51,7 @@ function App() {
     <>
       <Router>
         <Navbar mode="dark"/>
-        
+        <Alert alert={alert} />
         <Routes>
           <Route exact path="/" element={!isAuthenticated ? <Login showAlert={showAlert} setAuth={setAuth}/> : <Navigate to="/home"/>}/>
           <Route exact path="/register" element={!isAuthenticated ? <Register showAlert={showAlert} setAuth={setAuth}/> : <Navigate to="/"/>}/>
@@ -59,7 +59,7 @@ function App() {
           <Route exact path="/myarticles" element = {isAuthenticated ? <MyArticles showAlert={showAlert} /> : <Navigate to ="/"/>}/>
         </Routes>
       </Router>
-      <Alert alert={alert} />
+      
 
     </>
   );

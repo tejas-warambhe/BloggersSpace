@@ -83,32 +83,7 @@ export default function Login(props) {
           Not Registered yet? <Link to="/register">Register</Link>
         </p>
       </form>
-      {/* <h1 className="text-center">Login</h1>
-      <form>
-        <input
-          type="email"
-          name="email"
-          placeholder="email"
-          className="form-control my-3"
-          value={inputs.email}
-          onChange={(e) => onChange(e)}
-        />
-        <input
-          type="password"
-          name="password"
-          placeholder="password"
-          className="form-control my-3"
-          value={inputs.password}
-          onChange={(e) => onChange(e)}
-        />
-      </form>
-      <button
-        className="btn btn-success btn-block my-2"
-        style={{ width: "100%" }}
-        onClick={(e) => onSubmitForm(e)}
-      >
-        Submit
-      </button> */}
+      
       <Footer foot = {1}/>
     </div>
   );

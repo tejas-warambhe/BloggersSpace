@@ -13,9 +13,14 @@ export default function AllArticles() {
 
     const parseRes = await response.json();
     parseRes.reverse();
+    // let data = parseRes[0].article_content;
+
     setarticles(parseRes);
 
+    
+
     console.log(parseRes, "here");
+    // console.log(data);
   }
 
   useEffect(() => {
@@ -27,18 +32,25 @@ export default function AllArticles() {
       {articles.map((ele, key) => {
         return (
           <div className="container py-3 shadow " key={key}>
-            <div className="card p-2">
+            <div className="card p-2" style={{color:"white", backgroundColor: "#2f2844db"}}>
               <div className="row ">
-                <div className="col-md-12 px-3" >
+                <div className="col-md-12 px-3">
                   <div className="card-block px-6">
-                    <h4 className="card-title">{ele.article_title}</h4>
-                    <div className="card-title">
-                    <figcaption class="blockquote-footer">
-                    {ele.user_name}
-                            </figcaption>
+                    <div className="row">
+                      <div className="col">
+                        <h4 className="card-title">{ele.article_title}</h4>
+                      </div>
+                      <div className="col" style={{textAlign: "right", right:"5px"}}>
+                        
+                        <div className="card-title">
+                          <figcaption className="blockquote-footer" style={{color: "white"}}>
+                            {ele.user_name}
+                          </figcaption>
+                        </div>
+                      </div>
                     </div>
+                    <hr/>
                     
-                    {/* <blockquote>{ele.user_name}</blockquote> */}
                     <p className="card-text">{ele.article_content}</p>
                   </div>
                 </div>

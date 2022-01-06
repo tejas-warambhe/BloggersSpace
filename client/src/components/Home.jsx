@@ -74,9 +74,9 @@ export default function Home({ setAuth, showAlert }) {
   return (
     <div>
       <div className="container-fluid">
-        <div className="row my-6 justify-content-around">
+        <div className="row my-1 mb-5 ml-5 mr-5 justify-content-around">
           <div
-            className=" card my-3 col col-lg-2 col-md-12"
+            className=" card my-3 col col-lg-2  col-md-12 col-sm-12 col-12" 
             style={{
               width: "73%",
               height: "50%",
@@ -84,11 +84,15 @@ export default function Home({ setAuth, showAlert }) {
               alignItems: "center",
               justifyContent: "center",
               textAlign: "center",
+              color:"white", 
+              backgroundColor: "#2f2844db"
             }}
           >
-            <div className="card-body container py-3 ">
+           
+            <div className="card-body container py-3 " >
+              
               <div className=" d-flex flex-column">
-                <h5 style={{ color: "Grey" }}>
+                <h5>
                   <b>
                     Welcome <strong>{name}</strong>!
                   </b>
@@ -117,6 +121,7 @@ export default function Home({ setAuth, showAlert }) {
                 </button>
               </div>
             </div>
+            
           </div>
 
           <div
@@ -188,7 +193,7 @@ export default function Home({ setAuth, showAlert }) {
             </div>
           </div>
 
-          <div className="col col-lg-9 col-md-12">{<AllArticles />}</div>
+          <div className="col col-lg-9 col-md-12 col-sm-12 col-12">{<AllArticles />}</div>
         </div>
       </div>
       <Footer foot={2} />

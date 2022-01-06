@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
+import Footer from "./Footer";
 
 export default function Register(props) {
   const [inputs, setinputs] = useState({
@@ -91,13 +92,8 @@ export default function Register(props) {
           Already registered <Link to="/">log in?</Link>
         </p>
       </form>
-      {/* <h1 className='text-center my-5'>Register</h1>
-            <form>
-                <input type="email" name="email" placeholder='email' className='form-control my-3'  value={inputs.email} onChange={(e) => onChange(e)}/>
-                <input type="password" name="password" placeholder='password' className='form-control my-3' value={inputs.password} onChange={(e) => onChange(e)}/>
-                <input type="text" name="name" placeholder="name" className='form-control my-3' value={inputs.name} onChange={(e) => onChange(e)}/>
-            </form>
-            <button className="btn btn-success btn-block my-2" style={{width:"100%"}} onClick={(e) => onSubmitForm(e)}>Submit</button> */}
+      <Footer foot ={1}/>
+        
     </div>
   );
 }

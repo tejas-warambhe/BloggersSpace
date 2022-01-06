@@ -1,5 +1,28 @@
+/* @import url('https://fonts.googleapis.com/css2?family=Arvo:ital@1&family=IBM+Plex+Sans+KR:wght@300&family=Montserrat:wght@300;400;800&display=swap'); */
+
 * {
     box-sizing: border-box;
+}
+
+h4 {
+    font-family: 'Russo One', sans-serif;
+}
+
+#cow {
+    font-family: 'Russo One', sans-serif;
+}
+
+hr {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    border: 0;
+    border-top: 5px solid rgba(0, 0, 0, 0.1);
+}
+
+figcaption {
+    font-family: 'Moon Dance', cursive;
+    font-size: 28px !important;
+    color: white !important;
 }
 
 body {
@@ -8,7 +31,7 @@ body {
     font-weight: 400;
     font-family: sans-serif;
     background: white;
-    background-image: url("../public/output-onlinepngtools\(4\).png");
+    background-image: url("../public/output-onlinepngtools\(5\).png");
     /* background: #12c2e9; */
     /* fallback for old browsers */
     /* background: -webkit-linear-gradient(to right, #f64f59, #c471ed, #12c2e9); */
@@ -20,7 +43,8 @@ body {
 #navbar {
     color: white !important;
     text-decoration: white !important;
-    background-color: #131313e8 !important;
+    /* background-color: #131313e8 !important; */
+    background-color: #131313f0 !important;
 }
 
 #footer1 {
