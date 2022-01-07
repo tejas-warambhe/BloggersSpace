@@ -13,14 +13,11 @@ export default function AllArticles() {
 
     const parseRes = await response.json();
     parseRes.reverse();
-    // let data = parseRes[0].article_content;
+    
 
     setarticles(parseRes);
 
-    
-
-    console.log(parseRes, "here");
-    // console.log(data);
+  
   }
 
   useEffect(() => {
@@ -51,7 +48,7 @@ export default function AllArticles() {
                     </div>
                     <hr/>
                     
-                    <p className="card-text">{ele.article_content}</p>
+                    <p className="card-text" id="p_wrap">{ele.article_content}</p>
                   </div>
                 </div>
               </div>

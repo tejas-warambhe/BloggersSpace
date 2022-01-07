@@ -37,6 +37,7 @@ function App() {
   useEffect(() =>{
     verifyAuth()
   }, []);
+
   const [alert, setAlert] = useState(null);
   const showAlert = (message, type) => {
   setAlert({
@@ -68,4 +69,3 @@ function App() {
 export default App;
 
 
-//react router dom and toastifys

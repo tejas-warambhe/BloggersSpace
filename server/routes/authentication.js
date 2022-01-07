@@ -25,12 +25,12 @@ router.post("/register", async(request, response) => {
 
         const user = await pool.query('SELECT * FROM users WHERE user_email = $1', [email]);
 
-        // response.json(user.rows);
+
 
         if (user.rows.length !== 0) {
             response.status(401).send("User Already Exists");
         }
-        // response.json("Got a new User");
+
 
         // bycrpyting (hiding password)
         const saltRound = 10;
@@ -52,7 +52,7 @@ router.post("/register", async(request, response) => {
 });
 
 router.post('/login', async(request, response) => {
-    // console.log(request.body, "here");
+
     try {
         const { email, password } = request.body;
 
@@ -71,7 +71,7 @@ router.post('/login', async(request, response) => {
         //grant the token
 
         const token = jwtGenerator(user.rows[0].user_id);
-        // console.log(token);
+
 
         return response.json({ token });
 

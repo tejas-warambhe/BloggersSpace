@@ -47,6 +47,10 @@ body {
     background-color: #131313f0 !important;
 }
 
+#p_wrap {
+    white-space: pre-line;
+}
+
 #footer1 {
     position: fixed;
     left: 0;

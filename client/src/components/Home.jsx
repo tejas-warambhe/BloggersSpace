@@ -48,13 +48,15 @@ export default function Home({ setAuth, showAlert }) {
       body: JSON.stringify(body),
     });
     const parseRes = await response.json();
-    console.log(parseRes);
-    console.log("submit data to backend");
+    
+    if(parseRes.length === 0){
+      console.log("No articles available");
+    }
+    
     setPost({
       title: "",
       content: "",
     });
-    // window.location.href = "http://localhost:3000/myarticles";
     showAlert(
       "Your Post Was Created Succesfully, View it in My Articles section",
       "success"
@@ -74,9 +76,9 @@ export default function Home({ setAuth, showAlert }) {
   return (
     <div>
       <div className="container-fluid">
-        <div className="row my-1 mb-5 ml-5 mr-5 justify-content-around">
+        <div className="row my-1  justify-content-around">
           <div
-            className=" card my-3 col col-lg-2  col-md-12 col-sm-12 col-12" 
+            className=" card my-3 col col-lg-2 mb-5 ml-5 mr-5 col-md-12 col-sm-12 col-12" 
             style={{
               width: "73%",
               height: "50%",
@@ -185,7 +187,7 @@ export default function Home({ setAuth, showAlert }) {
                       data-dismiss="modal"
                       onClick={(e) => onSubmitForm(e)}
                     >
-                      Submit
+                      Create Blog
                     </button>
                   </div>
                 </form>

@@ -3,10 +3,10 @@ import { Link } from "react-router-dom";
 
 export default function Navbar() {
   return (
-    <div className="">
+    <div className="mt-5">
       <nav id="navbar" className="navbar navbar-expand-lg navbar-dark fixed-top">
         <a className="navbar-brand" href="/home">
-          BloggerSpace
+          BloggersSpace
         </a>
         <button
           className="navbar-toggler"

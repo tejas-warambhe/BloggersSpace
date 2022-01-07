@@ -6,7 +6,7 @@ const authorisation = require('../middlewares/authorisation');
 router.get('/posts', authorisation, async(req, res) => {
     try {
         const response = await pool.query('SELECT * FROM articles');
-        // console.log(response.rows);
+
         res.json(response.rows);
     } catch (err) {
         console.log(err.message);
@@ -38,7 +38,7 @@ router.post('/create', authorisation, async(req, res) => {
 
     try {
         const response = await pool.query('INSERT INTO articles(user_id, article_title, article_content, user_name) VALUES($1, $2, $3, $4) RETURNING *', [req.user.id, article_title, article_content, user_name]);
-        console.log(response.rows[0]);
+
         res.json(response.rows[0]);
     } catch (err) {
         console.log(err.message);
@@ -64,7 +64,7 @@ router.delete('/removepost', authorisation, async(req, res) => {
 
     try {
         const user = await pool.query('DELETE FROM articles WHERE article_id = $1 AND user_id = $2 RETURNING *', [article_id, req.user.id]);
-        console.log(user.rows);
+
         res.json(user.rows);
     } catch (err) {
         console.log(err.message);

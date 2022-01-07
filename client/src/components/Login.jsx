@@ -26,7 +26,7 @@ export default function Login(props) {
       });
 
       const ParseRes = await response.json();
-      console.log(ParseRes);
+      // console.log(ParseRes);
       localStorage.setItem("token", ParseRes.token);
       props.setAuth(true);
       props.showAlert("Logged In Succesfully", "success");

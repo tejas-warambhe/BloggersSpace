@@ -13,7 +13,7 @@ export default function MyArticles({showAlert}) {
     const parseRes = await response.json();
     parseRes.reverse();
     setmyarticles(parseRes);
-    console.log(parseRes);
+    
   }
   function updateApi() {
     getArticles();
