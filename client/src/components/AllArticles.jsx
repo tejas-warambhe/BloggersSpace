@@ -4,7 +4,7 @@ export default function AllArticles() {
   const [articles, setarticles] = useState([]);
 
   async function getAllArticles() {
-    const response = await fetch("http://localhost:5000/home/posts", {
+    const response = await fetch("https://bloggers-space.herokuapp.com/home/posts", {
       method: "GET",
       headers: {
         token: localStorage.token,

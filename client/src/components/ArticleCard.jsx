@@ -8,7 +8,7 @@ export default function ArticleCard(props) {
     const body = {
       article_id,
     };
-    const response = await fetch("http://localhost:5000/home/removepost", {
+    const response = await fetch("https://bloggers-space.herokuapp.com/home/removepost", {
       method: "DELETE",
       headers: {
         "Content-Type": "application/json",

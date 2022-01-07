@@ -16,7 +16,7 @@ export default function Home({ setAuth, showAlert }) {
 
   async function getName() {
     try {
-      const response = await fetch("http://localhost:5000/home", {
+      const response = await fetch("https://bloggers-space.herokuapp.com/home", {
         method: "GET",
         headers: { token: localStorage.token },
       });
@@ -39,7 +39,7 @@ export default function Home({ setAuth, showAlert }) {
       article_content,
       user_name,
     };
-    const response = await fetch("http://localhost:5000/home/create", {
+    const response = await fetch("https://bloggers-space.herokuapp.com/home/create", {
       method: "POST",
       headers: {
         "Content-type": "application/json",

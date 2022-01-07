@@ -5,7 +5,7 @@ const bycrypt = require('bcrypt');
 const jwtGenerator = require('../utils/jwtGenerator');
 const authorisation = require('../middlewares/authorisation');
 
-router.get("/users", (request, response) => {
+router.get("/users ", (request, response) => {
     pool.query('SELECT * FROM users', (err, res) => {
         if (err) {
             return console.log(err);
